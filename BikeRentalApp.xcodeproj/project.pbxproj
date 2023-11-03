@@ -24,6 +24,7 @@
 		8F5434492AEB4FD900E0E260 /* Reservation List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5434482AEB4FD900E0E260 /* Reservation List.swift */; };
 		8F54344B2AEB4FEF00E0E260 /* Create Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54344A2AEB4FEF00E0E260 /* Create Reservation.swift */; };
 		8F54344D2AEB500A00E0E260 /* Adjust Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54344C2AEB500A00E0E260 /* Adjust Inventory.swift */; };
+		8FD45DF22AF4748E00BDCD8C /* BikeBackground.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8F5434482AEB4FD900E0E260 /* Reservation List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reservation List.swift"; sourceTree = "<group>"; };
 		8F54344A2AEB4FEF00E0E260 /* Create Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Reservation.swift"; sourceTree = "<group>"; };
 		8F54344C2AEB500A00E0E260 /* Adjust Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjust Inventory.swift"; sourceTree = "<group>"; };
+		8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BikeBackground.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				8F42B9732AEB4C2900CFBB4F /* BikeRentalAppApp.swift */,
 				8F42B9752AEB4C2900CFBB4F /* ContentView.swift */,
 				8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */,
+				8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */,
 				8F5434442AEB4F7F00E0E260 /* Employee Pages */,
 				8F54343A2AEB4E6E00E0E260 /* CustomerRentalPages */,
 				8F54342F2AEB4D7A00E0E260 /* Registration Pages */,
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F42B97C2AEB4C2A00CFBB4F /* Preview Assets.xcassets in Resources */,
+				8FD45DF22AF4748E00BDCD8C /* BikeBackground.mp4 in Resources */,
 				8F42B9782AEB4C2A00CFBB4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +370,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Willie.BikeRentalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -402,7 +407,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Willie.BikeRentalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
