@@ -47,17 +47,77 @@ class LoopingPlayerUIView: UIView {
 }
 
 struct LandingPageView: View {
+    
+    @State private var username = ""
+    @State private var password = ""
+    @State private var wrongUsername = 0
+    @State private var wrongpassword = 0
+    @State private var showingLoginScreen = false
+    
     var body: some View {
-        ZStack{
-            GeometryReader{ geo in
-                PlayerView()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geo.size.width, height: geo.size.height+100)
-                    .edgesIgnoringSafeArea(.all)
-                    .overlay(Color.black.opacity(0.2))
-                    .blur(radius: 1)
-                    .edgesIgnoringSafeArea(.all)
+        NavigationView{
+            ZStack{
+                GeometryReader{ geo in
+                    PlayerView()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geo.size.width, height: geo.size.height+100)
+                        .edgesIgnoringSafeArea(.all)
+                        .blur(radius: 1)
+                        .edgesIgnoringSafeArea(.all)
+                }
+                RoundedRectangle(cornerRadius: 25.0)
+                    .fill(.white.opacity(0.8))
+                    .frame(width: 300, height: 400)
+                VStack{
+                    Image("EvoLogo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 50, height: 23)
+                    Text("Login")
+                        .font(.largeTitle)
+                        .padding()
+                    TextField("email", text: $username)
+                        .padding()
+                        .frame(width: 250, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(wrongUsername))
+                    
+                    SecureField("password", text: $password)
+                        .padding()
+                        .frame(width: 250, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                        .border(.red, width: CGFloat(wrongpassword))
+                    
+                    Button("Login"){
+                        authenticateUser(username: username, password: password)
+                    }
+                    .foregroundColor(.white)
+                    .frame(width: 250, height: 50)
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    
+                    NavigationLink(destination: Text("You have logged in @ \(username)"), isActive: $showingLoginScreen){
+                        EmptyView()
+                    }
+                }
+                
             }
+        }
+        .navigationBarHidden(true)
+    }
+    func authenticateUser (username: String, password: String){
+        if username.lowercased() == "testuser" {
+            wrongUsername = 0
+            if password.lowercased() == "testpassword" {
+                wrongpassword = 0
+                showingLoginScreen = true
+            } else {
+                wrongpassword = 2
+            }
+        } else {
+            wrongUsername = 2
         }
     }
 }

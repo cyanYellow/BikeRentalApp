@@ -25,6 +25,9 @@
 		8F54344B2AEB4FEF00E0E260 /* Create Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54344A2AEB4FEF00E0E260 /* Create Reservation.swift */; };
 		8F54344D2AEB500A00E0E260 /* Adjust Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54344C2AEB500A00E0E260 /* Adjust Inventory.swift */; };
 		8FD45DF22AF4748E00BDCD8C /* BikeBackground.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */; };
+		8FD45E102AF5761500BDCD8C /* BikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E0F2AF5761500BDCD8C /* BikeModel.swift */; };
+		8FD45E132AF5780C00BDCD8C /* BikeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E122AF5780C00BDCD8C /* BikeData.swift */; };
+		8FD45E172AF57BFA00BDCD8C /* BikeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E162AF57BFA00BDCD8C /* BikeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		8F54344A2AEB4FEF00E0E260 /* Create Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Reservation.swift"; sourceTree = "<group>"; };
 		8F54344C2AEB500A00E0E260 /* Adjust Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjust Inventory.swift"; sourceTree = "<group>"; };
 		8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BikeBackground.mp4; sourceTree = "<group>"; };
+		8FD45E0F2AF5761500BDCD8C /* BikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeModel.swift; sourceTree = "<group>"; };
+		8FD45E122AF5780C00BDCD8C /* BikeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeData.swift; sourceTree = "<group>"; };
+		8FD45E162AF57BFA00BDCD8C /* BikeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,9 @@
 			children = (
 				8F54343B2AEB4F0700E0E260 /* Customer Rantal Page 1.swift */,
 				8F54343D2AEB4F1400E0E260 /* Customer Rantal Page 2.swift */,
+				8FD45E142AF57BCB00BDCD8C /* View */,
+				8FD45E112AF577F600BDCD8C /* Data */,
+				8FD45E0E2AF575F600BDCD8C /* Model */,
 				8F54343F2AEB4F2600E0E260 /* Customer Rantal Page 3.swift */,
 				8F5434412AEB4F2D00E0E260 /* Customer Rantal Page 4.swift */,
 			);
@@ -133,6 +142,30 @@
 				8F54344C2AEB500A00E0E260 /* Adjust Inventory.swift */,
 			);
 			path = "Employee Pages";
+			sourceTree = "<group>";
+		};
+		8FD45E0E2AF575F600BDCD8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FD45E0F2AF5761500BDCD8C /* BikeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FD45E112AF577F600BDCD8C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8FD45E122AF5780C00BDCD8C /* BikeData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8FD45E142AF57BCB00BDCD8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FD45E162AF57BFA00BDCD8C /* BikeCardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,10 +245,13 @@
 				8F5434402AEB4F2600E0E260 /* Customer Rantal Page 3.swift in Sources */,
 				8F5434462AEB4FC300E0E260 /* Employee Login.swift in Sources */,
 				8F54344D2AEB500A00E0E260 /* Adjust Inventory.swift in Sources */,
+				8FD45E102AF5761500BDCD8C /* BikeModel.swift in Sources */,
 				8F5434352AEB4DD400E0E260 /* Registration SecondPage.swift in Sources */,
 				8F5434372AEB4DE200E0E260 /* Registration ThirdPage.swift in Sources */,
+				8FD45E172AF57BFA00BDCD8C /* BikeCardView.swift in Sources */,
 				8F42B9742AEB4C2900CFBB4F /* BikeRentalAppApp.swift in Sources */,
 				8F5434422AEB4F2D00E0E260 /* Customer Rantal Page 4.swift in Sources */,
+				8FD45E132AF5780C00BDCD8C /* BikeData.swift in Sources */,
 				8F54342E2AEB4D6C00E0E260 /* LandingPage.swift in Sources */,
 				8F54344B2AEB4FEF00E0E260 /* Create Reservation.swift in Sources */,
 				8F54343E2AEB4F1400E0E260 /* Customer Rantal Page 2.swift in Sources */,
