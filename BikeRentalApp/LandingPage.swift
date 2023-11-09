@@ -62,7 +62,6 @@ struct LandingPageView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geo.size.width, height: geo.size.height+100)
                         .edgesIgnoringSafeArea(.all)
-                        .blur(radius: 1)
                         .edgesIgnoringSafeArea(.all)
                 }
                 RoundedRectangle(cornerRadius: 25.0)
@@ -72,7 +71,7 @@ struct LandingPageView: View {
                     Image("EvoLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 50, height: 23)
+                        .frame(width: 80, height: 30)
                     Text("Login")
                         .font(.largeTitle)
                         .padding()
@@ -98,7 +97,7 @@ struct LandingPageView: View {
                     .background(Color.green)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: Text("You have logged in @ \(username)"), isActive: $showingLoginScreen){
+                    NavigationLink(destination: RentalCategoryListView(), isActive: $showingLoginScreen){
                         EmptyView()
                     }
                 }

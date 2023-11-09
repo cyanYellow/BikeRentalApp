@@ -1,19 +1,19 @@
 //
-//  BikeModel.swift
+//  HybridBikesModel.swift
 //  BikeRentalApp
 //
-//  Created by Willie Green on 11/3/23.
+//  Created by Willie Green on 11/9/23.
 //
 
 import SwiftUI
 
-// Bikes Data Model
+// Road Bikes Data Model
 
-struct Bike: Identifiable{
+struct HybridBike: Identifiable{
     var id = UUID()
     var brand: String
     var model: String
     var price: Int
-    var travel: String
     var image: String
 }
+
