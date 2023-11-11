@@ -58,9 +58,9 @@ struct RentalCategoryListView: View {
                 
                 Rectangle()
                     .fill(.white)
-                    .frame(width: .infinity, height: 100)
+                    .frame(width: 400 , height: 100)
                     .offset(y: 365)
-                NavigationLink(destination: MountainBikeList()){
+                NavigationLink(destination: BikeCatagoryView()){
                     HStack{
                         Text("Create Reservation")
                             .foregroundColor(.white)

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8F42B9742AEB4C2900CFBB4F /* BikeRentalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42B9732AEB4C2900CFBB4F /* BikeRentalAppApp.swift */; };
-		8F42B9762AEB4C2900CFBB4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42B9752AEB4C2900CFBB4F /* ContentView.swift */; };
 		8F42B9782AEB4C2A00CFBB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */; };
 		8F42B97C2AEB4C2A00CFBB4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B97B2AEB4C2A00CFBB4F /* Preview Assets.xcassets */; };
 		8F54342E2AEB4D6C00E0E260 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */; };
@@ -44,7 +43,6 @@
 /* Begin PBXFileReference section */
 		8F42B9702AEB4C2900CFBB4F /* BikeRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F42B9732AEB4C2900CFBB4F /* BikeRentalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeRentalAppApp.swift; sourceTree = "<group>"; };
-		8F42B9752AEB4C2900CFBB4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F42B9792AEB4C2A00CFBB4F /* BikeRentalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeRentalApp.entitlements; sourceTree = "<group>"; };
 		8F42B97B2AEB4C2A00CFBB4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				8F42B9732AEB4C2900CFBB4F /* BikeRentalAppApp.swift */,
-				8F42B9752AEB4C2900CFBB4F /* ContentView.swift */,
 				8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */,
 				8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */,
 				8F5434442AEB4F7F00E0E260 /* Employee Pages */,
@@ -275,7 +272,6 @@
 				8FD45E242AFD255700BDCD8C /* RoadBikeModel.swift in Sources */,
 				8F5434392AEB4DF100E0E260 /* Registration FourthPage.swift in Sources */,
 				8F54343C2AEB4F0700E0E260 /* RentalCategoryListView.swift in Sources */,
-				8F42B9762AEB4C2900CFBB4F /* ContentView.swift in Sources */,
 				8FD45E2B2AFD2F6600BDCD8C /* HybridBikesModel.swift in Sources */,
 				8FD45E1B2AF967D900BDCD8C /* HybridBikeListView.swift in Sources */,
 				8F5434402AEB4F2600E0E260 /* Customer Rantal Page 3.swift in Sources */,
