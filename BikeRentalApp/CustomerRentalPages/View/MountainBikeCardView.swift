@@ -16,14 +16,14 @@ struct MountainBikeCardView: View {
             Image(mountainBike.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height:200)
+                .frame(width: 350, height:300)
                 .cornerRadius(10)
                 .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
             Rectangle()
                 .fill(Color(red: 0, green: 0, blue: 0, opacity: 0.65))
                 .frame(width: 350, height:100)
                 .cornerRadius(10)
-                .offset(CGSize(width:0.0, height: 50.0))
+                .offset(CGSize(width:0.0, height: 100.0))
             VStack(alignment: .leading){
                 HStack(alignment: .top){
                     Text(mountainBike.brand)
@@ -42,7 +42,7 @@ struct MountainBikeCardView: View {
                     .font(.caption)
             }
             .frame(width: 330, height: 100, alignment: .topLeading)
-            .offset(CGSize(width: 0.0, height: 60.0))
+            .offset(CGSize(width: 0.0, height: 110.0))
 
                 
         }

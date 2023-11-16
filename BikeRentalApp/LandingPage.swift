@@ -66,7 +66,9 @@ struct LandingPageView: View {
                 }
                 RoundedRectangle(cornerRadius: 25.0)
                     .fill(.white.opacity(0.8))
-                    .frame(width: 300, height: 400)
+                    .frame(maxWidth: .infinity, maxHeight: 400)
+                    .padding(.horizontal, 20)
+                    .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
                 VStack{
                     Image("EvoLogo")
                         .resizable()
@@ -77,30 +79,33 @@ struct LandingPageView: View {
                         .padding()
                     TextField("email", text: $username)
                         .padding()
-                        .frame(width: 250, height: 50)
+                        .frame(maxWidth: .infinity, maxHeight: 50)
+                        .border(.red, width: CGFloat(wrongUsername))
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongUsername))
                     
                     SecureField("password", text: $password)
                         .padding()
-                        .frame(width: 250, height: 50)
+                        .frame(maxWidth: .infinity, maxHeight: 50)
+                        .border(.red, width: CGFloat(wrongpassword))
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .border(.red, width: CGFloat(wrongpassword))
                     
                     Button("Login"){
                         authenticateUser(username: username, password: password)
                     }
                     .foregroundColor(.white)
-                    .frame(width: 250, height: 50)
+                    .frame(maxWidth: .infinity, maxHeight: 50)
                     .background(Color.green)
-                    .cornerRadius(10)
+                    .cornerRadius(30)
+                    .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
                     
-                    NavigationLink(destination: RentalCategoryListView(), isActive: $showingLoginScreen){
+                    NavigationLink(destination: CustomerProfileCardView(), isActive: $showingLoginScreen){
                         EmptyView()
                     }
+                    .navigationBarBackButtonHidden()
                 }
+                .padding(.horizontal, 40)
                 
             }
         }

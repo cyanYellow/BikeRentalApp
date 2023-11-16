@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BikeCatagoryView: View {
     var body: some View{
-        NavigationView{
+        NavigationStack{
             VStack(spacing: 30){
                 NavigationLink(destination: MountainBikeList()){
                     Text("Mountain Bike")

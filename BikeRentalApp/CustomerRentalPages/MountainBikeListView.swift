@@ -8,19 +8,38 @@ import SwiftUI
 
 struct MountainBikeList: View {
     
+    @State private var showSearchView = false
+    
     var bikes: [MountainBike] = mountainBikesData
     
     var body: some View {
-        NavigationView {
-            List{
-                VStack{
-                    ForEach(bikes[0...5]){ item in
-                        MountainBikeCardView(mountainBike: item)
+        NavigationStack {
+            
+            if showSearchView {
+                BikeSearchView(show: $showSearchView)
+            } else{
+                ScrollView{
+                    
+                    SearchAndFilter()
+                        .onTapGesture {
+                            withAnimation(.smooth){
+                                showSearchView.toggle()
+                            }
+                        }
+                    LazyVStack(spacing: 0){
+                        ForEach(bikes, id: \.self){ item in
+                            NavigationLink(value: item){
+                                MountainBikeCardView(mountainBike: item)
+                            }
+                        }
                     }
                 }
+                .navigationDestination(for: Int.self){ item in
+                    BikeDetailView()
+                }
+                
             }
         }
-        .navigationTitle("")
     }
 }
 

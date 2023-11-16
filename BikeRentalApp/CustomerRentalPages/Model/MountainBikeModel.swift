@@ -9,7 +9,7 @@ import SwiftUI
 
 // Mountain Bikes Data Model
 
-struct MountainBike: Identifiable{
+struct MountainBike: Hashable{
     var id = UUID()
     var brand: String
     var model: String
