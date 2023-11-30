@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCvlynqU7Q6Wdz61Dy-yEtk27mTfoxDP5g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>281713185981</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Willie.BikeRentalApp</string>
+	<key>PROJECT_ID</key>
+	<string>evo-rental-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>evo-rental-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:281713185981:ios:46546aa4deac76be46d3d4</string>
+</dict>
+</plist>

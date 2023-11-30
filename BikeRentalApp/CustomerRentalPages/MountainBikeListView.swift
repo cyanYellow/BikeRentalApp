@@ -6,14 +6,18 @@
 //
 import SwiftUI
 
-struct MountainBikeList: View {
+struct BikeListView: View {
     
     @State private var showSearchView = false
     
-    var bikes: [MountainBike] = mountainBikesData
+    //Navigation to detail view
+    @State var selectedBike: Bike?
+    @State var didSelectBike = false
+    
+    var bikes: [Bike] = bikeData
     
     var body: some View {
-        NavigationStack {
+        VStack {
             
             if showSearchView {
                 BikeSearchView(show: $showSearchView)
@@ -27,15 +31,23 @@ struct MountainBikeList: View {
                             }
                         }
                     LazyVStack(spacing: 0){
-                        ForEach(bikes, id: \.self){ item in
-                            NavigationLink(value: item){
-                                MountainBikeCardView(mountainBike: item)
+                        ForEach(bikes, id: \.self){ bike in
+                            Button{
+                                selectedBike = bike
+                                didSelectBike.toggle()
                             }
+                        label: {
+                            MountainBikeCardView(mountainBike: bike)
                         }
                     }
                 }
-                .navigationDestination(for: Int.self){ item in
-                    BikeDetailView()
+            }
+            .navigationDestination(isPresented: $didSelectBike){
+                if let bike = selectedBike{
+                    
+                    BikeDetailView(bike: bike)
+                    
+                }
                 }
                 
             }
@@ -44,6 +56,6 @@ struct MountainBikeList: View {
 }
 
 #Preview {
-    MountainBikeList()
+    BikeListView()
 }
 

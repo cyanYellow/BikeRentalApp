@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MountainBikeCardView: View {
     
-    var mountainBike: MountainBike
+    var mountainBike: Bike
     
     var body: some View {
         ZStack {
@@ -51,6 +51,6 @@ struct MountainBikeCardView: View {
 }
 
 #Preview {
-    MountainBikeCardView(mountainBike: mountainBikesData[4])
+    MountainBikeCardView(mountainBike: bikeData[4])
 }
 

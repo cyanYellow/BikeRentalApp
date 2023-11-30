@@ -11,7 +11,7 @@ struct BikeCatagoryView: View {
     var body: some View{
         NavigationStack{
             VStack(spacing: 30){
-                NavigationLink(destination: MountainBikeList()){
+                NavigationLink(destination: BikeListView()){
                     Text("Mountain Bike")
                 }
                 NavigationLink(destination: RoadBikeList()){

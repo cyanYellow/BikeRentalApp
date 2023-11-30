@@ -48,8 +48,11 @@ class LoopingPlayerUIView: UIView {
 
 struct LandingPageView: View {
     
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
+    
+    
     @State private var wrongUsername = 0
     @State private var wrongpassword = 0
     @State private var showingLoginScreen = false
@@ -66,10 +69,12 @@ struct LandingPageView: View {
                 }
                 RoundedRectangle(cornerRadius: 25.0)
                     .fill(.white.opacity(0.8))
-                    .frame(maxWidth: .infinity, maxHeight: 400)
+                    .frame(maxWidth: .infinity, maxHeight: 420)
                     .padding(.horizontal, 20)
                     .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
                 VStack{
+                    
+                    //Image and Title
                     Image("EvoLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -77,33 +82,47 @@ struct LandingPageView: View {
                     Text("Login")
                         .font(.largeTitle)
                         .padding()
-                    TextField("email", text: $username)
-                        .padding()
-                        .frame(maxWidth: .infinity, maxHeight: 50)
-                        .border(.red, width: CGFloat(wrongUsername))
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
                     
-                    SecureField("password", text: $password)
-                        .padding()
-                        .frame(maxWidth: .infinity, maxHeight: 50)
-                        .border(.red, width: CGFloat(wrongpassword))
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
+                    //Imput Fields
+                    InputView(text: $email,
+                              title: "Email Address",
+                              placeholder: "Email Address")
+                    .autocapitalization(.none)
                     
-                    Button("Login"){
-                        authenticateUser(username: username, password: password)
+                    InputView(text: $password, 
+                              title: "Password",
+                              placeholder: "Password",
+                              isSecureField: true)
+                    
+                    Button{
+                        Task{
+                            try await viewModel.signIn(withEmail: email, password: password)
+                        }
+                    } label:{
+                        Text("Login")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, maxHeight: 50)
                     }
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, maxHeight: 50)
-                    .background(Color.green)
+                    .background(formIsValid ? Color.green : Color.gray)
+                    .disabled(!formIsValid)
                     .cornerRadius(30)
                     .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
                     
-                    NavigationLink(destination: CustomerProfileCardView(), isActive: $showingLoginScreen){
-                        EmptyView()
+                    NavigationLink{
+                        RegistrationView()
+                            .navigationBarBackButtonHidden(true)
+                    } label:{
+                        HStack{
+                            Text("Don't have an account?")
+                                .foregroundStyle(.gray)
+                            Text("Sign up")
+                                .foregroundStyle(.black)
+                                .fontWeight(.bold)
+                                .underline()
+                        }
                     }
-                    .navigationBarBackButtonHidden()
+                    .padding(20)
+                    
                 }
                 .padding(.horizontal, 40)
                 
@@ -126,6 +145,14 @@ struct LandingPageView: View {
     }
 }
 
+extension LandingPageView: AuthenicationFormProtocol{
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+    }
+}
 struct LandingPageView_Previews: PreviewProvider {
     static var previews: some View {
         LandingPageView()

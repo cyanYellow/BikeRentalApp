@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct BikeRentalAppApp: App {
+    @StateObject var viewModel = AuthViewModel()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            LandingPageView()
+            ContentView()
+                .environmentObject(viewModel)
         }
     }
 }

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct BikeDetailView: View{
     
+    var bike: Bike?
+    
     var body: some View{
+        
+        
         VStack{
             Image("Santa_Cruz_Bronson_CC_X01_AXS_END_GT_050_WEB_Res-036")
                 .resizable()
@@ -120,7 +124,5 @@ struct BikeDetailView: View{
     }
 }
 #Preview {
-    BikeDetailView()
+    BikeDetailView(bike: bikeData[0])
 }
-
-
