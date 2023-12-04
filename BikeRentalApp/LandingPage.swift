@@ -69,30 +69,58 @@ struct LandingPageView: View {
                 }
                 RoundedRectangle(cornerRadius: 25.0)
                     .fill(.white.opacity(0.8))
-                    .frame(maxWidth: .infinity, maxHeight: 420)
+                    .frame(maxWidth: .infinity, maxHeight: 490)
                     .padding(.horizontal, 20)
-                    .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
+                    //.shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
                 VStack{
                     
                     //Image and Title
                     Image("EvoLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 80, height: 30)
-                    Text("Login")
-                        .font(.largeTitle)
-                        .padding()
+                        .frame(width: 125, height: 100)
+                        .offset(y: -20)
+//                    Text("Login")
+//                        .font(.largeTitle)
+//                        .padding()
                     
                     //Imput Fields
-                    InputView(text: $email,
-                              title: "Email Address",
-                              placeholder: "Email Address")
-                    .autocapitalization(.none)
+                    ZStack(alignment: .leading){
+                        if !email.isEmpty {
+                            if email.contains("@"){
+                                
+                            }else{
+                                Text("invalid email address")
+                                    .padding([.top, .leading, . trailing])
+                                    .font(.footnote)
+                                    .foregroundStyle(.red)
+                                    .offset(y: -45)
+                            }
+                        }
+                        InputView(text: $email,
+                                  title: "Email Address",
+                                  placeholder: "Email Address")
+                        .padding(.bottom)
+                    }
                     
-                    InputView(text: $password, 
-                              title: "Password",
-                              placeholder: "Password",
-                              isSecureField: true)
+                    ZStack(alignment: .leading){
+                        if !password.isEmpty {
+                            if email.contains("@"){
+                                
+                            }else{
+                                Text("invalid email address")
+                                    .padding([.top, .leading, . trailing])
+                                    .font(.footnote)
+                                    .foregroundStyle(.red)
+                                    .offset(y: -45)
+                            }
+                        }
+                        InputView(text: $password,
+                                  title: "Password",
+                                  placeholder: "Password",
+                                  isSecureField: true)
+                        .padding(.vertical)
+                    }
                     
                     Button{
                         Task{
@@ -107,6 +135,7 @@ struct LandingPageView: View {
                     .disabled(!formIsValid)
                     .cornerRadius(30)
                     .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
+                    .padding(.top)
                     
                     NavigationLink{
                         RegistrationView()
@@ -121,7 +150,7 @@ struct LandingPageView: View {
                                 .underline()
                         }
                     }
-                    .padding(20)
+                    .padding(.top, 35)
                     
                 }
                 .padding(.horizontal, 40)
@@ -129,19 +158,6 @@ struct LandingPageView: View {
             }
         }
         .navigationBarHidden(true)
-    }
-    func authenticateUser (username: String, password: String){
-        if username.lowercased() == "testuser" {
-            wrongUsername = 0
-            if password.lowercased() == "testpassword" {
-                wrongpassword = 0
-                showingLoginScreen = true
-            } else {
-                wrongpassword = 2
-            }
-        } else {
-            wrongUsername = 2
-        }
     }
 }
 

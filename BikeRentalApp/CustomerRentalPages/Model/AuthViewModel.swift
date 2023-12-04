@@ -32,7 +32,7 @@ class AuthViewModel: ObservableObject {
             self.userSession = result.user
             await fetchUser()
         }catch{
-            print("failed to lof in with error \(error.localizedDescription)")
+            print("failed to log in with error \(error.localizedDescription)")
         }
         
     }
@@ -70,6 +70,6 @@ class AuthViewModel: ObservableObject {
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {return}
         self.currentUser = try? snapshot.data(as: User.self)
         
-        print("Current user is \(self.currentUser)")
+        print("Current user is \(String(describing: self.currentUser))")
     }
 }

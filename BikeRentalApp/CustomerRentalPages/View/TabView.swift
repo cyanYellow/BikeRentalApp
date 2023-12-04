@@ -9,12 +9,14 @@ import SwiftUI
 
 struct MaintabView: View {
     var body: some View {
-        TabView{
-            BikeListView()
-                .tabItem { Label("Browse", systemImage: "bicycle") }
-            
-            CustomerProfileCardView()
-                .tabItem { Label("Profile", systemImage: "person") }
+        NavigationStack{
+            TabView{
+                BikeListView()
+                    .tabItem { Label("Browse", systemImage: "bicycle") }
+                
+                CustomerProfileCardView()
+                    .tabItem { Label("Profile", systemImage: "person") }
+            }
         }
     }
 }

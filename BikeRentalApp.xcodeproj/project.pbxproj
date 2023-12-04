@@ -11,11 +11,6 @@
 		8F42B9782AEB4C2A00CFBB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */; };
 		8F42B97C2AEB4C2A00CFBB4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B97B2AEB4C2A00CFBB4F /* Preview Assets.xcassets */; };
 		8F54342E2AEB4D6C00E0E260 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */; };
-		8F5434332AEB4DC500E0E260 /* Registration FirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5434322AEB4DC500E0E260 /* Registration FirstPage.swift */; };
-		8F5434352AEB4DD400E0E260 /* Registration SecondPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5434342AEB4DD400E0E260 /* Registration SecondPage.swift */; };
-		8F5434372AEB4DE200E0E260 /* Registration ThirdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5434362AEB4DE200E0E260 /* Registration ThirdPage.swift */; };
-		8F5434392AEB4DF100E0E260 /* Registration FourthPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5434382AEB4DF100E0E260 /* Registration FourthPage.swift */; };
-		8F54343C2AEB4F0700E0E260 /* RentalCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54343B2AEB4F0700E0E260 /* RentalCategoryListView.swift */; };
 		8F54343E2AEB4F1400E0E260 /* MountainBikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54343D2AEB4F1400E0E260 /* MountainBikeListView.swift */; };
 		8F5434462AEB4FC300E0E260 /* Employee Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5434452AEB4FC300E0E260 /* Employee Login.swift */; };
 		8F5434492AEB4FD900E0E260 /* Reservation List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5434482AEB4FD900E0E260 /* Reservation List.swift */; };
@@ -25,8 +20,6 @@
 		8FD45E102AF5761500BDCD8C /* MountainBikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E0F2AF5761500BDCD8C /* MountainBikeModel.swift */; };
 		8FD45E132AF5780C00BDCD8C /* MountainBikeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E122AF5780C00BDCD8C /* MountainBikeData.swift */; };
 		8FD45E172AF57BFA00BDCD8C /* MountainBikeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E162AF57BFA00BDCD8C /* MountainBikeCardView.swift */; };
-		8FD45E192AF967A000BDCD8C /* RoadBikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E182AF967A000BDCD8C /* RoadBikeListView.swift */; };
-		8FD45E1B2AF967D900BDCD8C /* HybridBikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E1A2AF967D900BDCD8C /* HybridBikeListView.swift */; };
 		8FD45E1D2AF97C0200BDCD8C /* CustomerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E1C2AF97C0200BDCD8C /* CustomerProfileView.swift */; };
 		8FD45E1F2AF99A8400BDCD8C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E1E2AF99A8400BDCD8C /* UserModel.swift */; };
 		8FD45E222AF99C3D00BDCD8C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E212AF99C3D00BDCD8C /* UserData.swift */; };
@@ -82,11 +75,6 @@
 		8F42B9792AEB4C2A00CFBB4F /* BikeRentalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeRentalApp.entitlements; sourceTree = "<group>"; };
 		8F42B97B2AEB4C2A00CFBB4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
-		8F5434322AEB4DC500E0E260 /* Registration FirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registration FirstPage.swift"; sourceTree = "<group>"; };
-		8F5434342AEB4DD400E0E260 /* Registration SecondPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registration SecondPage.swift"; sourceTree = "<group>"; };
-		8F5434362AEB4DE200E0E260 /* Registration ThirdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registration ThirdPage.swift"; sourceTree = "<group>"; };
-		8F5434382AEB4DF100E0E260 /* Registration FourthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registration FourthPage.swift"; sourceTree = "<group>"; };
-		8F54343B2AEB4F0700E0E260 /* RentalCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalCategoryListView.swift; sourceTree = "<group>"; };
 		8F54343D2AEB4F1400E0E260 /* MountainBikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainBikeListView.swift; sourceTree = "<group>"; };
 		8F5434452AEB4FC300E0E260 /* Employee Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee Login.swift"; sourceTree = "<group>"; };
 		8F5434482AEB4FD900E0E260 /* Reservation List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reservation List.swift"; sourceTree = "<group>"; };
@@ -96,8 +84,6 @@
 		8FD45E0F2AF5761500BDCD8C /* MountainBikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainBikeModel.swift; sourceTree = "<group>"; };
 		8FD45E122AF5780C00BDCD8C /* MountainBikeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainBikeData.swift; sourceTree = "<group>"; };
 		8FD45E162AF57BFA00BDCD8C /* MountainBikeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainBikeCardView.swift; sourceTree = "<group>"; };
-		8FD45E182AF967A000BDCD8C /* RoadBikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadBikeListView.swift; sourceTree = "<group>"; };
-		8FD45E1A2AF967D900BDCD8C /* HybridBikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridBikeListView.swift; sourceTree = "<group>"; };
 		8FD45E1C2AF97C0200BDCD8C /* CustomerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileView.swift; sourceTree = "<group>"; };
 		8FD45E1E2AF99A8400BDCD8C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8FD45E212AF99C3D00BDCD8C /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -181,7 +167,6 @@
 				8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */,
 				8F5434442AEB4F7F00E0E260 /* Employee Pages */,
 				8F54343A2AEB4E6E00E0E260 /* CustomerRentalPages */,
-				8F54342F2AEB4D7A00E0E260 /* Registration Pages */,
 				8FD45E6C2B05891400BDCD8C /* Components */,
 				8F42B9792AEB4C2A00CFBB4F /* BikeRentalApp.entitlements */,
 				8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */,
@@ -200,25 +185,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8F54342F2AEB4D7A00E0E260 /* Registration Pages */ = {
-			isa = PBXGroup;
-			children = (
-				8F5434322AEB4DC500E0E260 /* Registration FirstPage.swift */,
-				8F5434342AEB4DD400E0E260 /* Registration SecondPage.swift */,
-				8F5434362AEB4DE200E0E260 /* Registration ThirdPage.swift */,
-				8F5434382AEB4DF100E0E260 /* Registration FourthPage.swift */,
-			);
-			path = "Registration Pages";
-			sourceTree = "<group>";
-		};
 		8F54343A2AEB4E6E00E0E260 /* CustomerRentalPages */ = {
 			isa = PBXGroup;
 			children = (
 				8FD45E1C2AF97C0200BDCD8C /* CustomerProfileView.swift */,
-				8F54343B2AEB4F0700E0E260 /* RentalCategoryListView.swift */,
 				8F54343D2AEB4F1400E0E260 /* MountainBikeListView.swift */,
-				8FD45E182AF967A000BDCD8C /* RoadBikeListView.swift */,
-				8FD45E1A2AF967D900BDCD8C /* HybridBikeListView.swift */,
 				8FD45E6A2B0561A500BDCD8C /* BikeDetailView.swift */,
 				8FD45E142AF57BCB00BDCD8C /* View */,
 				8FD45E112AF577F600BDCD8C /* Data */,
@@ -400,23 +371,17 @@
 				8FD45E692B052B5500BDCD8C /* SearchAndFilter.swift in Sources */,
 				8FD45E702B05D32400BDCD8C /* BikeSearchView.swift in Sources */,
 				8FD45E242AFD255700BDCD8C /* RoadBikeModel.swift in Sources */,
-				8F5434392AEB4DF100E0E260 /* Registration FourthPage.swift in Sources */,
-				8F54343C2AEB4F0700E0E260 /* RentalCategoryListView.swift in Sources */,
 				8FD45E2B2AFD2F6600BDCD8C /* HybridBikesModel.swift in Sources */,
-				8FD45E1B2AF967D900BDCD8C /* HybridBikeListView.swift in Sources */,
 				8F5434462AEB4FC300E0E260 /* Employee Login.swift in Sources */,
-				8FD45E192AF967A000BDCD8C /* RoadBikeListView.swift in Sources */,
 				8F54344D2AEB500A00E0E260 /* Adjust Inventory.swift in Sources */,
 				8FD45E262AFD25E400BDCD8C /* RoadBikeData.swift in Sources */,
 				8FD45E722B17C29C00BDCD8C /* TabView.swift in Sources */,
 				8FD45E102AF5761500BDCD8C /* MountainBikeModel.swift in Sources */,
-				8F5434352AEB4DD400E0E260 /* Registration SecondPage.swift in Sources */,
 				8FD45E2F2AFD319F00BDCD8C /* HybridCardView.swift in Sources */,
 				8FD45EB42B18033F00BDCD8C /* ContentView.swift in Sources */,
 				8FD45E6E2B05897500BDCD8C /* CollapsableText.swift in Sources */,
 				8FD45E1F2AF99A8400BDCD8C /* UserModel.swift in Sources */,
 				8FD45E2D2AFD2F8D00BDCD8C /* HybridBikeData.swift in Sources */,
-				8F5434372AEB4DE200E0E260 /* Registration ThirdPage.swift in Sources */,
 				8FD45E222AF99C3D00BDCD8C /* UserData.swift in Sources */,
 				8FD45E172AF57BFA00BDCD8C /* MountainBikeCardView.swift in Sources */,
 				8FD45E752B17D68300BDCD8C /* InputView.swift in Sources */,
@@ -428,7 +393,6 @@
 				8F54343E2AEB4F1400E0E260 /* MountainBikeListView.swift in Sources */,
 				8FD45E1D2AF97C0200BDCD8C /* CustomerProfileView.swift in Sources */,
 				8FD45E6B2B0561A500BDCD8C /* BikeDetailView.swift in Sources */,
-				8F5434332AEB4DC500E0E260 /* Registration FirstPage.swift in Sources */,
 				8F5434492AEB4FD900E0E260 /* Reservation List.swift in Sources */,
 				8FD45E292AFD27AD00BDCD8C /* RoadBikeCardView.swift in Sources */,
 			);

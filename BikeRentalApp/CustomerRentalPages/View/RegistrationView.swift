@@ -12,7 +12,7 @@ struct RegistrationView: View {
     @State private var email = ""
     @State private var fullName = ""
     @State private var password = ""
-    @State private var conformPassword = ""
+    @State private var confirmPassword = ""
     @EnvironmentObject var viewModel: AuthViewModel
     
     @Environment(\.dismiss) var dismiss
@@ -31,23 +31,80 @@ struct RegistrationView: View {
                 .padding()
             
             // Input Fields
-            InputView(text: $email,
-                      title: "Email Address",
-                      placeholder: "Email Address")
-            .padding()
-            InputView(text: $fullName,
-                      title: "Full Name",
-                      placeholder: "Full Name")
-            .padding()
-            InputView(text: $password,
-                      title: "Password",
-                      placeholder: "password", isSecureField: true)
-            .padding()
-            InputView(text: $conformPassword,
-                      title: "Conform Password",
-                      placeholder: "Confirm Password", isSecureField: true)
-            .padding()
-            Spacer()
+            VStack{
+                ZStack(alignment: .leading){
+                    if !email.isEmpty {
+                        if email.contains("@"){
+                            
+                        }else{
+                            Text("invalid email address")
+                                .padding([.top, .leading, . trailing])
+                                .font(.footnote)
+                                .foregroundStyle(.red)
+                                .offset(y: -45)
+                        }
+                    }
+                    InputView(text: $email,
+                              title: "Email Address",
+                              placeholder: "Email Address")
+                    .padding()
+                }
+                
+                ZStack(alignment: .leading){
+                    if !fullName.isEmpty {
+                        if fullName.contains(" "){
+                            
+                        }else{
+                            Text("must use space between first and last name")
+                                .padding([.top, .leading, . trailing])
+                                .font(.footnote)
+                                .foregroundStyle(.red)
+                                .offset(y: -45)
+                        }
+                    }
+                    InputView(text: $fullName,
+                              title: "Full Name",
+                              placeholder: "Fisrtname Lastname")
+                    .padding()
+                }
+                
+                ZStack(alignment: .leading){
+                    if !password.isEmpty {
+                        if password.count > 5{
+                            
+                        }else{
+                            Text("password must conatin at least 6 characters")
+                                .padding([.top, .leading, . trailing])
+                                .font(.footnote)
+                                .foregroundStyle(.red)
+                                .offset(y: -45)
+                        }
+                    }
+                    InputView(text: $password,
+                              title: "Password",
+                              placeholder: "Password", isSecureField: true)
+                    .padding()
+                }
+                
+                ZStack(alignment: .leading){
+                    if !confirmPassword.isEmpty {
+                        if confirmPassword == password{
+                            
+                        }else{
+                            Text("passwords do no match")
+                                .padding([.top, .leading, . trailing])
+                                .font(.footnote)
+                                .foregroundStyle(.red)
+                                .offset(y: -45)
+                        }
+                    }
+                    InputView(text: $confirmPassword,
+                              title: "Conform Password",
+                              placeholder: "Confirm Password", isSecureField: true)
+                    .padding()
+                }
+                Spacer()
+            }
             
             Button{
                 Task{
@@ -58,7 +115,8 @@ struct RegistrationView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, maxHeight: 50)
             }
-            .background(Color.green)
+            .background(formIsValid ? Color.green : Color.gray)
+            .disabled(!formIsValid)
             .cornerRadius(30)
             .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
             .padding()
@@ -76,6 +134,17 @@ struct RegistrationView: View {
                 }
             }
         }
+    }
+}
+
+extension RegistrationView: AuthenicationFormProtocol{
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && fullName.contains(" ")
+        && !password.isEmpty
+        && password.count > 5
+        && confirmPassword == password
     }
 }
 
