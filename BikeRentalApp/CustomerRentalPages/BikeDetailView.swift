@@ -10,22 +10,23 @@ import SwiftUI
 struct BikeDetailView: View{
     
     var bike: Bike?
+    @State var didConfirmBike = false
     
     var body: some View{
         
         
         VStack{
-            Image("Santa_Cruz_Bronson_CC_X01_AXS_END_GT_050_WEB_Res-036")
+            Image(bike!.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 300)
             ScrollView{
                 VStack(alignment: .leading){
-                    Text("Santa Cruz")
+                    Text(bike!.brand)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     
-                    Text("Bronson")
+                    Text(bike!.model)
                         .font(.largeTitle)
                     Divider()
                     
@@ -102,7 +103,9 @@ struct BikeDetailView: View{
                     .padding(.horizontal, 30)
                     //Spacer()
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        didConfirmBike.toggle()
+                    }, label: {
                         HStack{
                             Text("Reserve")
                                 .foregroundColor(.white)
@@ -117,6 +120,12 @@ struct BikeDetailView: View{
                         
                     })
                     .padding(.horizontal, 30)
+                    .navigationDestination(isPresented: $didConfirmBike){
+                        if let bike = bike{
+                            
+                            CheckoutView(selectedBike: bike)
+                        }
+                    }
                 }
             }
             .background(.white)

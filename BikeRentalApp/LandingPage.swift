@@ -94,7 +94,7 @@ struct LandingPageView: View {
                                     .padding([.top, .leading, . trailing])
                                     .font(.footnote)
                                     .foregroundStyle(.red)
-                                    .offset(y: -45)
+                                    .offset(y: -55)
                             }
                         }
                         InputView(text: $email,

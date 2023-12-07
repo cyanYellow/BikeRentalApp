@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F09205B2B217BCC005BC2E0 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F09205A2B217BCC005BC2E0 /* CheckoutView.swift */; };
 		8F42B9742AEB4C2900CFBB4F /* BikeRentalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42B9732AEB4C2900CFBB4F /* BikeRentalAppApp.swift */; };
 		8F42B9782AEB4C2A00CFBB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */; };
 		8F42B97C2AEB4C2A00CFBB4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B97B2AEB4C2A00CFBB4F /* Preview Assets.xcassets */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F09205A2B217BCC005BC2E0 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		8F42B9702AEB4C2900CFBB4F /* BikeRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F42B9732AEB4C2900CFBB4F /* BikeRentalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeRentalAppApp.swift; sourceTree = "<group>"; };
 		8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				8FD45E1C2AF97C0200BDCD8C /* CustomerProfileView.swift */,
 				8F54343D2AEB4F1400E0E260 /* MountainBikeListView.swift */,
 				8FD45E6A2B0561A500BDCD8C /* BikeDetailView.swift */,
+				8F09205A2B217BCC005BC2E0 /* CheckoutView.swift */,
 				8FD45E142AF57BCB00BDCD8C /* View */,
 				8FD45E112AF577F600BDCD8C /* Data */,
 				8FD45E0E2AF575F600BDCD8C /* Model */,
@@ -385,6 +388,7 @@
 				8FD45E222AF99C3D00BDCD8C /* UserData.swift in Sources */,
 				8FD45E172AF57BFA00BDCD8C /* MountainBikeCardView.swift in Sources */,
 				8FD45E752B17D68300BDCD8C /* InputView.swift in Sources */,
+				8F09205B2B217BCC005BC2E0 /* CheckoutView.swift in Sources */,
 				8F42B9742AEB4C2900CFBB4F /* BikeRentalAppApp.swift in Sources */,
 				8FD45EB22B17FC0E00BDCD8C /* AuthViewModel.swift in Sources */,
 				8FD45E132AF5780C00BDCD8C /* MountainBikeData.swift in Sources */,
