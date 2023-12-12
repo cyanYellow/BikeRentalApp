@@ -13,18 +13,39 @@ enum BikeSearchOptions {
 }
 
 struct BikeSearchView: View {
+    
+    var bikes: [Bike] = bikeData
+    @State var filteredList: [Bike]
+    
+    //show or hide menue
     @Binding var show: Bool
-    @State private var bikeSearch = ""
+    
+    //filter components
+    @State var typeSelection = "Any"
+    let types = ["Any", "Mountain", "Road", "Hybrid"]
+    
+    @State var brandSelection = "Any"
+    let brands = ["Any", "Santa Cruz", "Scott", "Transition", "Yeti"]
+    
     @State private var selectedOption: BikeSearchOptions = .WhatToRide
     
     //calendar components
-    @State private var startDate = Date()
-    @State private var endDate = Date()
+    @State var startDate = Date.now
+    @State var endDate = Date.now
     
     var body: some View {
         
         VStack{
             HStack{
+                if !typeSelection.isEmpty{
+                    Button("Clear"){
+                        typeSelection = "Any"
+                        brandSelection = "Any"
+                    }
+                    .foregroundStyle(.green)
+                    .fontWeight(.semibold)
+                }
+                Spacer()
                 Button {
                     withAnimation(.smooth){
                         show.toggle()
@@ -34,14 +55,6 @@ struct BikeSearchView: View {
                         .imageScale(.large)
                         .foregroundStyle(.green)
                 }
-                Spacer()
-                if !bikeSearch.isEmpty{
-                    Button("Clear"){
-                        bikeSearch = ""
-                    }
-                    .foregroundStyle(.green)
-                    .fontWeight(.semibold)
-                }
             }
             .padding()
 
@@ -49,17 +62,37 @@ struct BikeSearchView: View {
                 if selectedOption == .WhatToRide{
                     Text("What do you want to ride?")
                         .font(.title2)
-                    HStack{
-                        Image(systemName: "magnifyingglass")
-                            .imageScale(.small)
-                        TextField("Search Bikes", text: $bikeSearch)
+                    VStack {
+                        HStack{
+                            Text("Type:")
+                            Spacer()
+                            Picker("Type", selection: $typeSelection) {
+                                ForEach(types, id: \.self){
+                                    Text($0)
+                                }
+                            }
+                            .accentColor(.black)
+                        }
+                        .padding(.vertical)
+                        Divider()
+                        HStack{
+                            Text("Brand:")
+                            Spacer()
+                            Picker("Type", selection: $brandSelection) {
+                                ForEach(brands, id: \.self){
+                                    Text($0)
+                                }
+                            }
+                            .accentColor(.black)
+                        }
+                        .padding(.vertical)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    //.frame(maxWidth: .infinity, maxHeight: 50)
                     .padding(.horizontal)
-                    .background(Color.black.opacity(0.05))
+                    //.background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                 }else{
-                    CapsulView(title: "bike", description: "search bikes")
+                    CapsulView(title: "\(typeSelection), \(brandSelection)", description: "Filter Bikes")
                 }
             }
             .padding()
@@ -82,11 +115,13 @@ struct BikeSearchView: View {
                         Spacer(minLength: 15)
                         
                         VStack{
-                            DatePicker("From", selection: $startDate, displayedComponents: .date)
+                            DatePicker("From", selection: $startDate, in: Date.now..., displayedComponents: .date)
+                                .accentColor(.green)
                             Spacer(minLength: 2)
                             Divider()
                             Spacer(minLength: 2)
-                            DatePicker("To", selection: $endDate, displayedComponents: .date)
+                            DatePicker("To", selection: $endDate,in: startDate..., displayedComponents: .date)
+                                .accentColor(.green)
                         }
                         .foregroundStyle(.gray)
                         .font(.subheadline)
@@ -95,7 +130,7 @@ struct BikeSearchView: View {
                     
                     
                 }else{
-                    CapsulView(title: "when", description: "add dates")
+                    CapsulView(title: "\(startDate.formatted(date: .numeric, time: .omitted)) -  \(endDate.formatted(date: .numeric, time: .omitted))", description: "add dates")
                         .onTapGesture {
                             withAnimation(.snappy){
                                 selectedOption = .dates
@@ -114,6 +149,11 @@ struct BikeSearchView: View {
         
         Button("Submit"){
             withAnimation(.smooth){
+                    filteredList = bikes.filter { bike in
+                    bike.type.contains(typeSelection)
+                    && bike.brand.contains(brandSelection)
+                    
+                }
                 show.toggle()
             }
         }
@@ -121,8 +161,16 @@ struct BikeSearchView: View {
         .frame(maxWidth: .infinity, maxHeight: 50)
         .background(Color.green)
         .cornerRadius(30)
+//        .navigationDestination(isPresented: $show){
+//            if let bikes = filteredList{
+//                
+//                BikeListView(bikes: bikes)
+//                
+//            }
+//        }
         .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
         .padding()
+        
     }
 }
 

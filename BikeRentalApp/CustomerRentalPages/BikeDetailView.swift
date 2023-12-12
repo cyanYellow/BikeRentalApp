@@ -34,7 +34,7 @@ struct BikeDetailView: View{
                         label: { Text("Overview") },
                         content: {
                             HStack {
-                                Text("The 2023 mixed-wheel Santa Cruz Bronson extends its genre-spanning reach even further than its predecessors, taking the do-it-all 150mm to Mullet Town. With a 29er leading the way, it has mindblowing grip and smooth rollover juice, while the 27.5 rear wheel helps maintain the maneuverability and playful ride that makes the Bronson Santa Cruz's best selling bike - poppy and as loose as you like. Mountain biking rules, and the Bronson is one of the reasons why.")
+                                Text(bike!.overview)
                                     .fontWeight(.light)
                                 Spacer()
                             }
@@ -53,17 +53,17 @@ struct BikeDetailView: View{
                                 HStack {
                                     Text("Used For:")
                                     Spacer()
-                                    Text("Trail, Enduro")
+                                    Text(bike!.usedFor)
                                 }
                                 HStack {
                                     Text("Gearing:")
                                     Spacer()
-                                    Text("1X12")
+                                    Text(bike!.gearing)
                                 }
                                 HStack {
                                     Text("Frame Material:")
                                     Spacer()
-                                    Text("Carbon Fiber")
+                                    Text(bike!.frameMaterial)
                                 }
                                 
                             }
@@ -133,5 +133,5 @@ struct BikeDetailView: View{
     }
 }
 #Preview {
-    BikeDetailView(bike: bikeData[0])
+    BikeDetailView(bike: bikeData[3])
 }

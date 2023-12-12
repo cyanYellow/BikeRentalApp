@@ -13,8 +13,10 @@ struct BikeListView: View {
     //Navigation to detail view
     @State var selectedBike: Bike?
     @State var didSelectBike = false
-    
-    var bikes: [Bike] = bikeData
+    //
+    //    var bikes: [Bike] = bikeData
+    @Binding var filteredList: [Bike]?
+    var fullBikeList: [Bike] = bikeData
     
     var body: some View {
         VStack {
@@ -31,7 +33,7 @@ struct BikeListView: View {
                             }
                         }
                     LazyVStack(spacing: 0){
-                        ForEach(bikes, id: \.self){ bike in
+                        ForEach(filteredList ?? fullBikeList, id: \.self){ bike in
                             Button{
                                 selectedBike = bike
                                 didSelectBike.toggle()

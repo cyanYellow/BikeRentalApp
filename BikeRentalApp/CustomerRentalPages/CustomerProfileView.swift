@@ -28,7 +28,7 @@ struct CustomerProfileCardView: View {
                         VStack(alignment: .center, spacing: 20){
                             Ellipse()
                                 .frame(width: 120, height: 120)
-                            Text(user?.firstName ?? "no user found")
+                            Text(user?.fullName ?? "no user found")
                         }
                         .frame(width: 120, height: 200)
                         .offset(x:20, y: 50)

@@ -17,4 +17,8 @@ struct Bike: Hashable{
     var price: Int
     var travel: String
     var image: String
+    var overview: String
+    var usedFor: String
+    var gearing: String
+    var frameMaterial: String
 }
