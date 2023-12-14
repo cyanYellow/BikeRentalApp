@@ -43,11 +43,11 @@ struct CheckoutView: View {
                 .padding(.top)
             
             HStack{
-                Text("\(rentalPeriod.start)")
+                Text("\(rentalPeriod.start.formatted(date: .numeric, time: .omitted))")
                 Spacer()
                 Image(systemName: "arrow.right")
                 Spacer()
-                Text("\(rentalPeriod.end)")
+                Text("\(rentalPeriod.end.formatted(date: .numeric, time: .omitted))")
             }
             .padding()
             
