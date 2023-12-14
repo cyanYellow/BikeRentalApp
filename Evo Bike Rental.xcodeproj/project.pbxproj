@@ -15,7 +15,8 @@
 		8F42B9782AEB4C2A00CFBB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */; };
 		8F42B97C2AEB4C2A00CFBB4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F42B97B2AEB4C2A00CFBB4F /* Preview Assets.xcassets */; };
 		8F54342E2AEB4D6C00E0E260 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */; };
-		8F54343E2AEB4F1400E0E260 /* MountainBikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54343D2AEB4F1400E0E260 /* MountainBikeListView.swift */; };
+		8F54343E2AEB4F1400E0E260 /* BikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F54343D2AEB4F1400E0E260 /* BikeListView.swift */; };
+		8F6DF1802B2A61170035DF0C /* CapsulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6DF17F2B2A61170035DF0C /* CapsulView.swift */; };
 		8FD45DF22AF4748E00BDCD8C /* BikeBackground.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */; };
 		8FD45E102AF5761500BDCD8C /* MountainBikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E0F2AF5761500BDCD8C /* MountainBikeModel.swift */; };
 		8FD45E132AF5780C00BDCD8C /* BikeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD45E122AF5780C00BDCD8C /* BikeData.swift */; };
@@ -70,13 +71,14 @@
 		8F2041DD2B26B3A9006CA78A /* HybridBikeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridBikeData.swift; sourceTree = "<group>"; };
 		8F2041DE2B26B3A9006CA78A /* RoadBikeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadBikeData.swift; sourceTree = "<group>"; };
 		8F2041E12B27AAE8006CA78A /* BikeListModificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListModificationModel.swift; sourceTree = "<group>"; };
-		8F42B9702AEB4C2900CFBB4F /* BikeRentalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeRentalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F42B9702AEB4C2900CFBB4F /* Evo Bike Rental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Evo Bike Rental.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F42B9732AEB4C2900CFBB4F /* BikeRentalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeRentalAppApp.swift; sourceTree = "<group>"; };
 		8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F42B9792AEB4C2A00CFBB4F /* BikeRentalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BikeRentalApp.entitlements; sourceTree = "<group>"; };
 		8F42B97B2AEB4C2A00CFBB4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
-		8F54343D2AEB4F1400E0E260 /* MountainBikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainBikeListView.swift; sourceTree = "<group>"; };
+		8F54343D2AEB4F1400E0E260 /* BikeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListView.swift; sourceTree = "<group>"; };
+		8F6DF17F2B2A61170035DF0C /* CapsulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulView.swift; sourceTree = "<group>"; };
 		8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BikeBackground.mp4; sourceTree = "<group>"; };
 		8FD45E0F2AF5761500BDCD8C /* MountainBikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainBikeModel.swift; sourceTree = "<group>"; };
 		8FD45E122AF5780C00BDCD8C /* BikeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeData.swift; sourceTree = "<group>"; };
@@ -148,7 +150,7 @@
 		8F42B9712AEB4C2900CFBB4F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8F42B9702AEB4C2900CFBB4F /* BikeRentalApp.app */,
+				8F42B9702AEB4C2900CFBB4F /* Evo Bike Rental.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +162,6 @@
 				8FD45EB32B18033F00BDCD8C /* ContentView.swift */,
 				8F54342D2AEB4D6C00E0E260 /* LandingPage.swift */,
 				8F54343A2AEB4E6E00E0E260 /* CustomerRentalPages */,
-				8FD45E6C2B05891400BDCD8C /* Components */,
 				8F42B9792AEB4C2A00CFBB4F /* BikeRentalApp.entitlements */,
 				8FD45DF12AF4748E00BDCD8C /* BikeBackground.mp4 */,
 				8F42B9772AEB4C2A00CFBB4F /* Assets.xcassets */,
@@ -182,9 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				8FD45E1C2AF97C0200BDCD8C /* CustomerProfileView.swift */,
-				8FD45E6A2B0561A500BDCD8C /* BikeDetailView.swift */,
-				8F54343D2AEB4F1400E0E260 /* MountainBikeListView.swift */,
 				8F09205A2B217BCC005BC2E0 /* CheckoutView.swift */,
+				8FD45E6A2B0561A500BDCD8C /* BikeDetailView.swift */,
+				8F54343D2AEB4F1400E0E260 /* BikeListView.swift */,
+				8FD45E762B17DFD400BDCD8C /* RegistrationView.swift */,
 				8FD45E142AF57BCB00BDCD8C /* View */,
 				8FD45E112AF577F600BDCD8C /* Data */,
 				8FD45E0E2AF575F600BDCD8C /* Model */,
@@ -222,26 +224,19 @@
 				8FD45E6F2B05D32400BDCD8C /* BikeSearchView.swift */,
 				8FD45E2E2AFD319F00BDCD8C /* HybridCardView.swift */,
 				8FD45E162AF57BFA00BDCD8C /* MountainBikeCardView.swift */,
-				8FD45E762B17DFD400BDCD8C /* RegistrationView.swift */,
 				8FD45E282AFD27AD00BDCD8C /* RoadBikeCardView.swift */,
 				8FD45E712B17C29C00BDCD8C /* TabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		8FD45E6C2B05891400BDCD8C /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				8FD45E6D2B05897500BDCD8C /* CollapsableText.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		8FD45E732B17D64E00BDCD8C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				8FD45E682B052B5500BDCD8C /* SearchAndFilter.swift */,
+				8FD45E6D2B05897500BDCD8C /* CollapsableText.swift */,
 				8FD45E742B17D68300BDCD8C /* InputView.swift */,
+				8FD45E682B052B5500BDCD8C /* SearchAndFilter.swift */,
+				8F6DF17F2B2A61170035DF0C /* CapsulView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -249,9 +244,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8F42B96F2AEB4C2900CFBB4F /* BikeRentalApp */ = {
+		8F42B96F2AEB4C2900CFBB4F /* Evo Bike Rental */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8F42B97F2AEB4C2A00CFBB4F /* Build configuration list for PBXNativeTarget "BikeRentalApp" */;
+			buildConfigurationList = 8F42B97F2AEB4C2A00CFBB4F /* Build configuration list for PBXNativeTarget "Evo Bike Rental" */;
 			buildPhases = (
 				8F42B96C2AEB4C2900CFBB4F /* Sources */,
 				8F42B96D2AEB4C2900CFBB4F /* Frameworks */,
@@ -261,7 +256,7 @@
 			);
 			dependencies = (
 			);
-			name = BikeRentalApp;
+			name = "Evo Bike Rental";
 			packageProductDependencies = (
 				8FD45E7B2B17F9AB00BDCD8C /* FirebaseAnalytics */,
 				8FD45E7D2B17F9AB00BDCD8C /* FirebaseAnalyticsOnDeviceConversion */,
@@ -292,7 +287,7 @@
 				8FD45EAF2B17F9AB00BDCD8C /* FirebaseStorageCombine-Community */,
 			);
 			productName = BikeRentalApp;
-			productReference = 8F42B9702AEB4C2900CFBB4F /* BikeRentalApp.app */;
+			productReference = 8F42B9702AEB4C2900CFBB4F /* Evo Bike Rental.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -310,7 +305,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8F42B96B2AEB4C2900CFBB4F /* Build configuration list for PBXProject "BikeRentalApp" */;
+			buildConfigurationList = 8F42B96B2AEB4C2900CFBB4F /* Build configuration list for PBXProject "Evo Bike Rental" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -326,7 +321,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8F42B96F2AEB4C2900CFBB4F /* BikeRentalApp */,
+				8F42B96F2AEB4C2900CFBB4F /* Evo Bike Rental */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +347,7 @@
 			files = (
 				8FD45E772B17DFD400BDCD8C /* RegistrationView.swift in Sources */,
 				8FD45E692B052B5500BDCD8C /* SearchAndFilter.swift in Sources */,
+				8F6DF1802B2A61170035DF0C /* CapsulView.swift in Sources */,
 				8FD45E702B05D32400BDCD8C /* BikeSearchView.swift in Sources */,
 				8FD45E242AFD255700BDCD8C /* RoadBikeModel.swift in Sources */,
 				8FD45E2B2AFD2F6600BDCD8C /* HybridBikesModel.swift in Sources */,
@@ -370,7 +366,7 @@
 				8FD45EB22B17FC0E00BDCD8C /* AuthViewModel.swift in Sources */,
 				8FD45E132AF5780C00BDCD8C /* BikeData.swift in Sources */,
 				8F54342E2AEB4D6C00E0E260 /* LandingPage.swift in Sources */,
-				8F54343E2AEB4F1400E0E260 /* MountainBikeListView.swift in Sources */,
+				8F54343E2AEB4F1400E0E260 /* BikeListView.swift in Sources */,
 				8FD45E1D2AF97C0200BDCD8C /* CustomerProfileView.swift in Sources */,
 				8F2041E22B27AAE8006CA78A /* BikeListModificationModel.swift in Sources */,
 				8FD45E6B2B0561A500BDCD8C /* BikeDetailView.swift in Sources */,
@@ -574,7 +570,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8F42B96B2AEB4C2900CFBB4F /* Build configuration list for PBXProject "BikeRentalApp" */ = {
+		8F42B96B2AEB4C2900CFBB4F /* Build configuration list for PBXProject "Evo Bike Rental" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8F42B97D2AEB4C2A00CFBB4F /* Debug */,
@@ -583,7 +579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8F42B97F2AEB4C2A00CFBB4F /* Build configuration list for PBXNativeTarget "BikeRentalApp" */ = {
+		8F42B97F2AEB4C2A00CFBB4F /* Build configuration list for PBXNativeTarget "Evo Bike Rental" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8F42B9802AEB4C2A00CFBB4F /* Debug */,

@@ -15,7 +15,7 @@ enum BikeSearchOptions {
 struct BikeSearchView: View {
     
     var bikes: [Bike] = bikeData
-    @State var filteredList: [Bike]
+    @Binding var filteredList: [Bike]
     
     //show or hide menue
     @Binding var show: Bool
@@ -32,6 +32,8 @@ struct BikeSearchView: View {
     //calendar components
     @State var startDate = Date.now
     @State var endDate = Date.now
+    @Binding var rentalDuration: Int
+    @Binding var rentalPeriod: DateInterval
     
     var body: some View {
         
@@ -108,6 +110,7 @@ struct BikeSearchView: View {
             }
            
             //date select
+            
             VStack(alignment: .leading){
                 if selectedOption == .dates{
                         Text("When do you want to ride?")
@@ -146,7 +149,6 @@ struct BikeSearchView: View {
             .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
         }
         Spacer()
-        
         Button("Submit"){
             withAnimation(.smooth){
                     filteredList = bikes.filter { bike in
@@ -155,6 +157,8 @@ struct BikeSearchView: View {
                     
                 }
                 show.toggle()
+                rentalPeriod = DateInterval(start: startDate, end: endDate)
+                rentalDuration = Int(((endDate.timeIntervalSinceReferenceDate - startDate.timeIntervalSinceReferenceDate)/86400)+1)
             }
         }
         .foregroundColor(.white)
@@ -175,28 +179,5 @@ struct BikeSearchView: View {
 }
 
 #Preview {
-    BikeSearchView(show: .constant(false))
-}
-
-struct CapsulView: View {
-    let title: String
-    let description: String
-    
-    var body: some View {
-        VStack{
-            HStack{
-                Text(title)
-                    .foregroundStyle(.gray)
-                Spacer()
-                Text(description)
-            }
-            .fontWeight(.semibold)
-            .font(.subheadline)
-        }
-//        .padding()
-//        .background(.white)
-//        .clipShape(RoundedRectangle(cornerRadius: 10))
-//        .padding()
-//        .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
-    }
+    BikeSearchView(filteredList: Binding<[Bike]>.constant(bikeData), show: .constant(false), rentalDuration: .constant(0), rentalPeriod: .constant(DateInterval(start: Date.now, end: Date.now)))
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchAndFilter: View{
     var body: some View{
         HStack{
-            Spacer()
             HStack{
                 Image(systemName: "line.3.horizontal.decrease.circle")
                 VStack(alignment: .leading, spacing: 2){

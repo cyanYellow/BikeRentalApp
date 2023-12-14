@@ -11,7 +11,8 @@ struct BikeDetailView: View{
     
     var bike: Bike?
     @State var didConfirmBike = false
-    
+    @Binding var rentalDuration: Int
+    @Binding var rentalPeriod: DateInterval
     var body: some View{
         
         
@@ -87,12 +88,12 @@ struct BikeDetailView: View{
                 HStack{
                     VStack(alignment: .leading){
                         
-                        Text("$260")
+                        Text("$\(rentalDuration * bike!.price)")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                         Text("Total before taxes")
                             .font(.caption)
-                        Text("Nov 15 - 20")
+                        Text("\(rentalPeriod)")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .underline()
@@ -123,7 +124,7 @@ struct BikeDetailView: View{
                     .navigationDestination(isPresented: $didConfirmBike){
                         if let bike = bike{
                             
-                            CheckoutView(selectedBike: bike)
+                            CheckoutView(selectedBike: bike, rentalDuration: $rentalDuration, rentalPeriod: $rentalPeriod)
                         }
                     }
                 }
@@ -133,5 +134,5 @@ struct BikeDetailView: View{
     }
 }
 #Preview {
-    BikeDetailView(bike: bikeData[3])
+    BikeDetailView(bike: bikeData[3], rentalDuration: .constant(2), rentalPeriod: .constant(DateInterval(start: Date.now, end: Date.now)))
 }

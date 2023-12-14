@@ -14,9 +14,12 @@ struct CheckoutView: View {
     
     var selectedBike: Bike?
     
+    @Binding var rentalDuration: Int
+    @Binding var rentalPeriod: DateInterval
+    
     var body: some View {
         
-        let preTaxCost = selectedBike!.price * 2
+        let preTaxCost = selectedBike!.price * rentalDuration
         let tax = Double(selectedBike!.price) * 0.027
         let formattedTax = String( format: "%.2f", tax)
         let totalCost = Double(preTaxCost) + tax
@@ -40,11 +43,11 @@ struct CheckoutView: View {
                 .padding(.top)
             
             HStack{
-                Text("12-5-2023")
+                Text("\(rentalPeriod.start)")
                 Spacer()
                 Image(systemName: "arrow.right")
                 Spacer()
-                Text("12-7-2023")
+                Text("\(rentalPeriod.end)")
             }
             .padding()
             
@@ -72,7 +75,7 @@ struct CheckoutView: View {
                 .padding(.top)
             VStack{
                 HStack{
-                    Text("$130.00 X 2 Days")
+                    Text("$\(selectedBike!.price) X \(rentalDuration) Days")
                     Spacer()
                     Text("$\(preTaxCost)")
                 }
@@ -118,6 +121,6 @@ struct CheckoutView: View {
     }
 }
 #Preview {
-    CheckoutView()
+    CheckoutView(rentalDuration: .constant(2), rentalPeriod: .constant(DateInterval(start: Date.now, end: Date.now)))
 }
 
