@@ -15,19 +15,7 @@ struct SearchAndFilter: View{
                 VStack(alignment: .leading, spacing: 2){
                     Text("Filter")
                         .fontWeight(.semibold)
-                    
-    //                Text("Any Date")
-    //                    .font(.caption2)
-    //                    .foregroundStyle(.gray)
                 }
-                
-    //            Button(
-    //                action: {
-    //
-    //                }, label: {
-    //                Image(systemName: "arrow.down.circle")
-    //                        .foregroundStyle(.gray)
-    //            })
             }
             .padding(.horizontal)
             .padding(.vertical, 10)

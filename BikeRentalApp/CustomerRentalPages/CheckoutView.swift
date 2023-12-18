@@ -17,12 +17,15 @@ struct CheckoutView: View {
     @Binding var rentalDuration: Int
     @Binding var rentalPeriod: DateInterval
     
+    @State var didConfirmReservation = false
+    
     var body: some View {
         
-        let preTaxCost = selectedBike!.price * rentalDuration
-        let tax = Double(selectedBike!.price) * 0.027
+        let preTaxCost = Double(selectedBike!.price * rentalDuration)
+        let formattedPreTaxCost = String( format: "%.2f", preTaxCost)
+        let tax = (Double(selectedBike!.price) * 0.029) * Double(rentalDuration)
         let formattedTax = String( format: "%.2f", tax)
-        let totalCost = Double(preTaxCost) + tax
+        let totalCost = preTaxCost + tax
         let formattedTotalCost = String( format: "%.2f", totalCost)
         
         VStack(alignment: .leading){
@@ -77,7 +80,7 @@ struct CheckoutView: View {
                 HStack{
                     Text("$\(selectedBike!.price) X \(rentalDuration) Days")
                     Spacer()
-                    Text("$\(preTaxCost)")
+                    Text("$\(formattedPreTaxCost)")
                 }
                 HStack{
                     Text("Tax")
@@ -104,9 +107,9 @@ struct CheckoutView: View {
                 Spacer()
             }
             Button{
-                        Task{
-
-                        }
+                didConfirmReservation = true
+                reservations.insert(Reservation(reservedBike: selectedBike!, reservedDates: rentalPeriod, cost: formattedTotalCost), at: 0)
+                
                     } label:{
                         Text("Create Reservation")
                             .foregroundColor(.white)
@@ -116,6 +119,9 @@ struct CheckoutView: View {
                     .cornerRadius(30)
                     .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
                     .padding([.leading, .trailing, .bottom])
+                    .navigationDestination(isPresented: $didConfirmReservation){
+                        MaintabView(selection: 2)
+                    }
         }
         .padding()
     }

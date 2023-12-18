@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct MaintabView: View {
+    
+    @State var selection = 1
+    
     var body: some View {
         NavigationStack{
-            TabView{
+            TabView(selection: $selection){
                 BikeListView()
-                    .tabItem { Label("Browse", systemImage: "bicycle") }
+                    .tabItem { Label("Browse", systemImage: "bicycle")
+                    }
+                    .tag(1)
                 
                 CustomerProfileCardView()
-                    .tabItem { Label("Profile", systemImage: "person") }
+                    .tabItem { Label("Profile", systemImage: "person")
+                    }
+                    .tag(2)
             }
         }
     }

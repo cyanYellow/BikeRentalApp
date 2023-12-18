@@ -89,9 +89,7 @@ struct BikeSearchView: View {
                         }
                         .padding(.vertical)
                     }
-                    //.frame(maxWidth: .infinity, maxHeight: 50)
                     .padding(.horizontal)
-                    //.background(Color.black.opacity(0.05))
                     .cornerRadius(10)
                 }else{
                     CapsulView(title: "\(typeSelection), \(brandSelection)", description: "Filter Bikes")
@@ -165,13 +163,6 @@ struct BikeSearchView: View {
         .frame(maxWidth: .infinity, maxHeight: 50)
         .background(Color.green)
         .cornerRadius(30)
-//        .navigationDestination(isPresented: $show){
-//            if let bikes = filteredList{
-//                
-//                BikeListView(bikes: bikes)
-//                
-//            }
-//        }
         .shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
         .padding()
         

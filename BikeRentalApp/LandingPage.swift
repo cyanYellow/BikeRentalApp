@@ -26,17 +26,21 @@ class LoopingPlayerUIView: UIView {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         // Load the resource -> h
         let fileUrl = Bundle.main.url(forResource: "BikeBackground", withExtension: "mp4")!
         let asset = AVAsset(url: fileUrl)
         let item = AVPlayerItem(asset: asset)
+        
         // Setup the player
         let player = AVQueuePlayer()
         playerLayer.player = player
         playerLayer.videoGravity = .resizeAspectFill
         layer.addSublayer(playerLayer)
+        
         // Create a new player looper with the queue player and template item
         playerLooper = AVPlayerLooper(player: player, templateItem: item)
+        
         // Start the movie
         player.play()
     }
@@ -71,7 +75,6 @@ struct LandingPageView: View {
                     .fill(.white.opacity(0.8))
                     .frame(maxWidth: .infinity, maxHeight: 490)
                     .padding(.horizontal, 20)
-                    //.shadow(color: (Color(red: 0, green: 0, blue: 0, opacity: 0.4)), radius: 5, x:5, y: 5)
                 VStack{
                     
                     //Image and Title
@@ -80,9 +83,6 @@ struct LandingPageView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 125, height: 100)
                         .offset(y: -20)
-//                    Text("Login")
-//                        .font(.largeTitle)
-//                        .padding()
                     
                     //Imput Fields
                     ZStack(alignment: .leading){

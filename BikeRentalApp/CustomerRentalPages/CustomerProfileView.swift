@@ -11,6 +11,8 @@ import Firebase
 struct CustomerProfileCardView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
+    var reservationAmount = reservations.count
+    
     var body: some View{
         
         let user = viewModel.currentUser 
@@ -33,21 +35,27 @@ struct CustomerProfileCardView: View {
                         .frame(width: 120, height: 200)
                         .offset(x:20, y: 50)
                         VStack(alignment: .leading){
-                            Text("N/A")
-                                .bold()
-                            Text("Next Reservation")
-                                .font(.caption)
-                            Spacer()
-                            Text("0")
-                                .bold()
-                            Text("Upcomming Resevations")
-                                .font(.caption)
-                            Spacer()
-                            Text("0")
-                                .bold()
-                            Text("Past Reservatioins")
-                                .font(.caption)
-                            
+                            if reservationAmount == 0{
+                                Text("N/A")
+                                    .bold()
+                                Text("Next Reservation")
+                                    .font(.caption)
+                                Spacer()
+                                Text("0")
+                                    .bold()
+                                Text("Upcomming Resevations")
+                                    .font(.caption)
+                            }else{
+                                Text("\(reservations[0].reservedDates.start.formatted(date: .numeric, time: .omitted))")
+                                    .bold()
+                                Text("Next Reservation")
+                                    .font(.caption)
+                                Spacer()
+                                Text("\(reservationAmount)")
+                                    .bold()
+                                Text("reservations")
+                                    .font(.caption)
+                            }
                         }
                         .frame(width: 230, height: 160)
                         .offset(y: 50)
@@ -65,6 +73,41 @@ struct CustomerProfileCardView: View {
                             .foregroundStyle(.black)
                     }
                 }
+                .offset(y: 50)
+                
+                VStack{
+                    Divider()
+                        Text("Resevations")
+                            .font(.title2)
+                            .padding()
+                    VStack(alignment: .leading){
+                    if reservationAmount == 0 {
+                        Text("No upcomming Resevations")
+                    }else{
+                        ForEach(reservations) { reservation in
+                            HStack{
+                                Text("\(reservation.reservedDates.start.formatted(date: .numeric, time: .omitted))")
+                                //Spacer()
+                                Image(systemName: "arrow.right")
+                                //Spacer()
+                                Text("\(reservation.reservedDates.end.formatted(date: .numeric, time: .omitted))")
+                            }
+                            HStack(alignment: .firstTextBaseline){
+                                Text(reservation.reservedBike.brand)
+                                Text(reservation.reservedBike.model)
+                                    .font(.callout)
+                            }
+                            HStack {
+                                Text("$ \(reservation.cost)")
+                                Spacer()
+                            }
+                            Divider()
+                        }
+                            
+                        }
+                    }
+                }
+                .padding(.horizontal)
                 .offset(y: 50)
                 Spacer()
             }

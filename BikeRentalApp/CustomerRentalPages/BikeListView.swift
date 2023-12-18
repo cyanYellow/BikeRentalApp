@@ -19,6 +19,7 @@ struct BikeListView: View {
     var fullBikeList: [Bike] = bikeData
     @State var rentalDuration: Int = 0
     @State var rentalPeriod: DateInterval = DateInterval(start: Date.now, end: Date.now)
+    @State var showWarning = false
     
     var body: some View {
         VStack {
@@ -29,8 +30,17 @@ struct BikeListView: View {
                 ScrollView{
                     HStack{
                         if formIsValid {
-                            Text("Please select rental period")
-                                .foregroundStyle(.green)
+                            if showWarning {
+                                HStack{
+                                    Spacer()
+                                    Text("Please slelect rental Period")
+                                        .foregroundStyle(.red)
+                                        .font(.caption)
+                                    Image(systemName: "arrow.right")
+                                        .foregroundColor(.red)
+                                }
+                            }
+                            
                         }
                         else{
                             Text("\(rentalDuration) day rental")
@@ -56,17 +66,21 @@ struct BikeListView: View {
                             MountainBikeCardView(mountainBike: bike)
                         }
                         .disabled(formIsValid)
+                        .onTapGesture {
+                            if formIsValid {
+                                showWarning = true
+                            }
+                        }
                     }
                 }
             }
             .navigationDestination(isPresented: $didSelectBike){
                 if let bike = selectedBike{
                     
-                    BikeDetailView(bike: bike, rentalDuration: $rentalDuration, rentalPeriod: $rentalPeriod)
+                        BikeDetailView(bike: bike, rentalDuration: $rentalDuration, rentalPeriod: $rentalPeriod)
                     
                 }
-                }
-                
+            }
             }
         }
     }

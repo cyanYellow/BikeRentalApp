@@ -39,11 +39,9 @@ struct BikeDetailView: View{
                                     .fontWeight(.light)
                                 Spacer()
                             }
-                            //.frame(maxWidth: .infinity)
                             .padding()
                         }
                     )
-                   // .frame(maxWidth: .infinity)
                     
                     Divider()
                     
@@ -68,15 +66,12 @@ struct BikeDetailView: View{
                                 }
                                 
                             }
-                            //.frame(maxWidth: .infinity)
                             .padding()
                         }
                     )
-                    //.frame(maxWidth: .infinity)
                 }
             }
             
-            //.frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
         .ignoresSafeArea()
@@ -102,7 +97,6 @@ struct BikeDetailView: View{
                         
                     }
                     .padding(.horizontal, 30)
-                    //Spacer()
                     
                     Button(action: {
                         didConfirmBike.toggle()
